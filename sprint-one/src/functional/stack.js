@@ -1,18 +1,26 @@
 var makeStack = function(){
   var instance = {};
-  
+
   // Use an object with numeric keys to store values
   var storage = {};
-  var size; // Hint: set an initial value here
+  var size = 0;
+
 
   // Implement the methods below
   instance.push = function(value){
+    // storage object above is always directly accessible using closure scope.
+    // size is going to double as the index we will be adding and removing from
+    // (size - 1 when removing) since we can only add or remove directly from the top
+    storage[size] = value;
+    size++;
   };
 
   instance.pop = function(){
+
   };
 
   instance.size = function(){
+    return size;
   };
 
   return instance;
@@ -26,3 +34,4 @@ var makeStack = function(){
 // to add something we can store it on our stack object inside a storage object with a numeric key equal to size
 // to remove something we can delete the property referred to by size - 1.
 // we will add all objects or values and remove all objects/valuesfrom a general storage object.
+
