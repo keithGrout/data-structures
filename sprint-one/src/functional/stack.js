@@ -1,6 +1,7 @@
 var makeStack = function(){
   var instance = {};
-
+  //  just a quick test
+  
   // Use an object with numeric keys to store values
   var storage = {};
   var size; // Hint: set an initial value here
