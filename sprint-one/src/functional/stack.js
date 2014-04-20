@@ -16,6 +16,12 @@ var makeStack = function(){
   };
 
   instance.pop = function(){
+    // we need to remove the top of the stack
+    // the top of the stack is = to size - 1;
+    var val = storage[size - 1]; // just make sure we store the value so we can return it after we delete it.
+    delete storage[size - 1];
+    size && size--;
+    return val;
 
   };
 
@@ -26,6 +32,11 @@ var makeStack = function(){
   return instance;
 };
 
+var stack = makeStack();
+
+stack.push('a');
+stack.push('b');
+stack.pop();
 // a stack works like a set of plates
 // we must add to the top and take from the top (last in, first out LIFO)
 
